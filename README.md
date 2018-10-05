@@ -1,5 +1,5 @@
-Advanced ACL
-============
+Amazon SNS
+==========
 
 
 #### Contents
