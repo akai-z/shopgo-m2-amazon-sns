@@ -1,5 +1,5 @@
-Amazon SNS
-==========
+Amazon SNS `[UNMAINTAINED]`
+===========================
 
 
 #### Contents
