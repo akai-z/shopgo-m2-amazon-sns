@@ -1,8 +1,6 @@
 Amazon SNS `[UNMAINTAINED]`
 ===========================
 
-## `Latest code can be found in develop branch.`
-
 #### Contents
 *   [Synopsis](#syn)
 *   [Overview](#over)
@@ -14,11 +12,17 @@ Amazon SNS `[UNMAINTAINED]`
 
 ## <a name="syn"></a>Synopsis
 
-TODO
+A module that integrates Magento 2 with Amazon SNS.
 
 ## <a name="over"></a>Overview
 
-TODO
+Amazon SNS module acts as bridge between Magento 2 and Amazon SNS.
+It adds the following features to Magento 2:
+* Create/Delete SNS topics.
+* Subscribe to SNS topics and unsubscribe from them.
+* A ready Magento 2 SNS endpoint that can be used for subscriptions.
+* Publish messages to SNS topics.
+* Dispatch events from received SNS notifications, that other modules could listen to.
 
 ## <a name="install"></a>Installation
 

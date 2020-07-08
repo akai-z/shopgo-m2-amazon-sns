@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2015 ShopGo. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="topic">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="item"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:unique name="uniqueTopicName">
+            <xs:annotation>
+                <xs:documentation>
+                    Attribute name is unique under all topics
+                </xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="item"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+        <xs:unique name="uniqueTopicArn">
+            <xs:annotation>
+                <xs:documentation>
+                    Attribute ARN is unique under all topics
+                </xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="item"/>
+            <xs:field xpath="@arn"/>
+        </xs:unique>
+    </xs:element>
+
+    <xs:attributeGroup name="itemsAttributeGroup">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="arn" type="xs:string" use="required"/>
+        <xs:attribute name="is_active" type="xs:int" use="optional"/>
+    </xs:attributeGroup>
+
+    <xs:element name="item">
+        <xs:annotation>
+            <xs:documentation>
+                Item Resource. Recursive complex type
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:complexType>
+            <xs:attributeGroup ref="itemsAttributeGroup"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
